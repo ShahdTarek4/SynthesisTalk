@@ -1,1 +1,6 @@
-"venv/\n__pycache__/\n.env\n*.pyc\n*.pkl" 
+venv/
+__pycache__/
+.env
+backend/.env
+*.pyc
+*.pkl

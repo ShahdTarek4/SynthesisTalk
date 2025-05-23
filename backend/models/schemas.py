@@ -7,3 +7,4 @@ class ChatRequest(BaseModel):
 class ToolRequest(BaseModel):
     tool_name: str
     input_text: str
+    user_id: str | None = None

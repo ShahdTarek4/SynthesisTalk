@@ -23,3 +23,16 @@ def save_note(user_id: str, note: str):
 def get_notes(user_id: str):
     notes = _load()
     return {"notes": notes.get(user_id, [])}
+
+def delete_note(user_id: str, index: int):
+    notes = _load()
+    if user_id in notes and 0 <= index < len(notes[user_id]):
+        del notes[user_id][index]
+        _save(notes)
+    return {"notes": notes.get(user_id, [])}
+
+def clear_notes(user_id: str):
+    notes = _load()
+    notes[user_id] = []
+    _save(notes)
+    return {"notes": []}

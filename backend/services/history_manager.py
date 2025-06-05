@@ -26,3 +26,9 @@ def get_history(user_id: str):
 
 conversation_store: Dict[str, List[str]] = {}
 
+
+def clear_history(user_id: str):
+    store = _load()
+    if user_id in store:
+        store[user_id] = []
+        _save(store)
